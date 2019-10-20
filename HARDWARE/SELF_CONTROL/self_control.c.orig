@@ -1,0 +1,80 @@
+#include "step.h"
+#include "self_control.h"
+#include "sys.h"
+#include "timer.h"
+#include "delay.h"
+#include "usart.h"
+#include "stdio.h"
+#include "wave.h"
+#include "infrared_INIT.h"
+extern int value[];
+void self_control(void)
+{
+    while(1)
+    {   int ix;s32 B_step;
+            //上方四个红外全亮
+        if(L_above_C==0&&L_below_C==0&&R_above_C==0&&R_below_C==0)
+        {delay_ms(10); 
+        if(L_above_C==0&&L_below_C==0&&R_above_C==0&&R_below_C==0) ix=0;
+        }
+            //左上角不亮，其他全亮
+        if(L_above_C==1&&L_below_C==0&&R_above_C==0&&R_below_C==0)
+        {delay_ms(10); 
+        if(L_above_C==1&&L_below_C==0&&R_above_C==0&&R_below_C==0) ix=1;
+        }
+            //左下角不亮，其他全亮
+        if(L_above_C==0&&L_below_C==1&&R_above_C==0&&R_below_C==0)
+        {delay_ms(10); 
+        if(L_above_C==0&&L_below_C==1&&R_above_C==0&&R_below_C==0) ix=2;
+        }
+            //右上角不亮，其他全亮
+        if(L_above_C==0&&L_below_C==0&&R_above_C==1&&R_below_C==0)
+        {delay_ms(10);
+        if(L_above_C==0&&L_below_C==0&&R_above_C==1&&R_below_C==0) ix=3;
+        } 
+            //右下角不亮，其他全亮
+        if(L_above_C==0&&L_below_C==0&&R_above_C==0&&R_below_C==1)
+        {delay_ms(10);
+        if(L_above_C==0&&L_below_C==0&&R_above_C==0&&R_below_C==1) ix=4;
+        }
+            //左边不亮，右边亮
+        if(L_above_C==1&&L_below_C==1&&R_above_C==0&&R_below_C==0)
+        {delay_ms(10);
+        if(L_above_C==1&&L_below_C==1&&R_above_C==0&&R_below_C==0) ix=5;
+        }
+            //左边亮，右边不亮
+        if(L_above_C==0&&L_below_C==0&&R_above_C==1&&R_below_C==1)
+        {delay_ms(10);
+        if(L_above_C==0&&L_below_C==0&&R_above_C==1&&R_below_C==1) ix=6;
+        }
+            //左上角和右下角不亮，左下角和右上角亮
+        if(L_above_C==1&&L_below_C==0&&R_above_C==0&&R_below_C==1)
+        {delay_ms(10);
+        if(L_above_C==1&&L_below_C==0&&R_above_C==0&&R_below_C==1) ix=7;
+        }
+            //左上角和右下角亮，左下角和右上角不亮
+        if(L_above_C==0&&L_below_C==1&&R_above_C==1&&R_below_C==0)
+        {delay_ms(10);
+        if(L_above_C==0&&L_below_C==1&&R_above_C==1&&R_below_C==0) ix=8;
+        }
+        switch(ix)
+        {
+            case 0:break;
+            case 1:speed_up_CNT_us(4,200,2,56);//正旋
+                   break;
+            case 2:speed_up_CNT_us(5,200,2,56);//逆旋
+                   break;
+            case 3:speed_up_CNT_us(5,200,2,56);//逆旋
+                   break;
+            case 4:speed_up_CNT_us(4,200,2,56);//正旋
+                   break;
+            case 5:if(SortAndCal(2,5)>=110&&SortAndCal(2,5)<=250)
+                    {B_step=(SortAndCal(2,5)-115)*5.6;}
+                    else {B_step=80;}
+                        speed_up_CNT_us(3,200,2,B_step);//右移
+                        step_wait();
+                   break;
+        }
+    }
+}
+
