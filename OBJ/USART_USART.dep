@@ -1,5 +1,5 @@
 Dependencies for Project 'USART', Target 'USART': (DO NOT MODIFY !)
-F (.\main.c)(0x5DAC2CD4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\TIMER -I..\STM32F10x_FWLib\src -I..\HARDWARE\STEP -I..\HARDWARE\WAVE -I..\HARDWARE\INFRARED_INIT -I..\HARDWARE\SELF_CONTROL-I "C:\Users\water and YJ\Desktop\国庆一号\EASTRED\USER\RTE"-I D:\MDK5.14\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5.14\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5DAEBB1D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\TIMER -I..\STM32F10x_FWLib\src -I..\HARDWARE\STEP -I..\HARDWARE\WAVE -I..\HARDWARE\INFRARED_INIT -I..\HARDWARE\SELF_CONTROL-I "C:\Users\water and YJ\Desktop\国庆一号\EASTRED\USER\RTE"-I D:\MDK5.14\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5.14\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\delay\delay.h)(0x5D941034)
 I (..\SYSTEM\sys\sys.h)(0x5D941034)
 I (..\USER\stm32f10x.h)(0x5D941034)
@@ -130,7 +130,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5D941034)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x5D941034)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x5D941034)
 I (D:\MDK5.14\ARM\ARMCC\include\stdio.h)(0x5D43AF9A)
-F (..\HARDWARE\STEP\step.c)(0x5DAC027E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\TIMER -I..\STM32F10x_FWLib\src -I..\HARDWARE\STEP -I..\HARDWARE\WAVE -I..\HARDWARE\INFRARED_INIT -I..\HARDWARE\SELF_CONTROL-I "C:\Users\water and YJ\Desktop\国庆一号\EASTRED\USER\RTE"-I D:\MDK5.14\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5.14\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\step.o --omf_browse ..\obj\step.crf --depend ..\obj\step.d)
+F (..\HARDWARE\STEP\step.c)(0x5DAEC52B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\TIMER -I..\STM32F10x_FWLib\src -I..\HARDWARE\STEP -I..\HARDWARE\WAVE -I..\HARDWARE\INFRARED_INIT -I..\HARDWARE\SELF_CONTROL-I "C:\Users\water and YJ\Desktop\国庆一号\EASTRED\USER\RTE"-I D:\MDK5.14\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5.14\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\step.o --omf_browse ..\obj\step.crf --depend ..\obj\step.d)
 I (..\HARDWARE\STEP\step.h)(0x5D99747A)
 I (..\SYSTEM\sys\sys.h)(0x5D941034)
 I (..\USER\stm32f10x.h)(0x5D941034)
@@ -233,7 +233,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x5D941034)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5D941034)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x5D941034)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x5D941034)
-F (..\HARDWARE\SELF_CONTROL\self_control.c)(0x5D9741A9)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\TIMER -I..\STM32F10x_FWLib\src -I..\HARDWARE\STEP -I..\HARDWARE\WAVE -I..\HARDWARE\INFRARED_INIT -I..\HARDWARE\SELF_CONTROL-I "C:\Users\water and YJ\Desktop\国庆一号\EASTRED\USER\RTE"-I D:\MDK5.14\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5.14\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\self_control.o --omf_browse ..\obj\self_control.crf --depend ..\obj\self_control.d)
+F (..\HARDWARE\SELF_CONTROL\self_control.c)(0x5DAEA8EB)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\TIMER -I..\STM32F10x_FWLib\src -I..\HARDWARE\STEP -I..\HARDWARE\WAVE -I..\HARDWARE\INFRARED_INIT -I..\HARDWARE\SELF_CONTROL-I "C:\Users\water and YJ\Desktop\国庆一号\EASTRED\USER\RTE"-I D:\MDK5.14\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5.14\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\self_control.o --omf_browse ..\obj\self_control.crf --depend ..\obj\self_control.d)
 I (..\HARDWARE\STEP\step.h)(0x5D99747A)
 I (..\SYSTEM\sys\sys.h)(0x5D941034)
 I (..\USER\stm32f10x.h)(0x5D941034)

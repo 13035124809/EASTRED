@@ -479,27 +479,29 @@ void GO(int ib)
     switch(ib)
     {
     case 0:
-
-        if(SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800)
+        if(SortAndCal(0,5)<600||SortAndCal(4,5)<600)//判断起步模块
         {
-           speed_up_CNT_ms(0,226,2,50000);IFx=1; 
-        }else {
+           speed_up_CNT_ms(0,226,1,50000);
+           IFx=1; 
+        }else if(SortAndCal(0,5)>=600||SortAndCal(4,5)>=600)
+              {
                speed_up(0,50000);//后退起步
                IFx=0;
               }
             if(motor[0].target!=motor[0].step)//当距离<600的时候开始减速到60
             going_wait=1;
         while(going_wait)
-        {   if(R_above==0||L_above==0)
+        {
+         if((R_above==0||L_above==0)&&SortAndCal(0,5)>600)
             {
                 if(SortAndCal(2,5)<60||SortAndCal(3,5)<60)
                 {
                     speed_down_CNT_ms(0,240,3,50000);
                     self_control();
-                    GO(0);
+                    GO(0);going_wait=0;
                 }
             }
-            if(SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)
+         else if(SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)//快速起步时的减速模块
             {
                 delay_ms(2);
                 if(SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)
@@ -513,17 +515,12 @@ void GO(int ib)
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
                     }
-                    going_wait=0;
+                    IFx=2;
                 }
             }
-        }
-        if(motor[0].target!=motor[0].step)//当距离<80时候开始减速很慢，然后停下
-            going_wait=1;
-        while(going_wait)
-        {
-            if(SortAndCal(0,5)<125&&SortAndCal(4,5)<125&&SortAndCal(1,5)>800)
+         else if((SortAndCal(0,5)<80||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
             {   delay_ms(2);
-                if(SortAndCal(0,5)<125&&SortAndCal(4,5)<125&&SortAndCal(1,5)>800)
+                if((SortAndCal(0,5)<80||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
                 {
                     for(GO_CONT = 225; GO_CONT>0; GO_CONT--)//每隔200us重复设定速度值，越大越慢
                     {
@@ -544,28 +541,29 @@ void GO(int ib)
         }
         break;
     case 1:
-        if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600)
+        if(SortAndCal(1,5)<600&&(SortAndCal(0,5)>800||SortAndCal(4,5)>800))
         {
-            speed_up_CNT_ms(1,226,2,50000);
+            speed_up_CNT_ms(1,226,1,50000);
             IFx=1;
-        }else 
+        }else if(SortAndCal(1,5)>=600) 
         {
-            speed_up(1,50000);IFx=0;
+            speed_up(1,50000);
+            IFx=0;
         }
         if(motor[0].target!=motor[0].step)//当距离<600的时候开始减速到60
             going_wait=1;
-        while(going_wait)
+while(going_wait)
         {
-            if(R_above==0||L_above==0)
+            if((R_above==0||L_above==0)&&SortAndCal(1,5)>600)
             {
                 if(SortAndCal(2,5)<60||SortAndCal(3,5)<60)
                 {
                     speed_down_CNT_ms(1,240,3,50000);
                     self_control();
-                    GO(1);
+                    GO(1);going_wait=0;
                 }
             }
-            if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
+           else if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
             {   delay_ms(2);
                 if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
                 {
@@ -578,17 +576,11 @@ void GO(int ib)
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
                     }
-                    going_wait=0;
+                    IFx=2;
                 }
             }
-        }
-        if(motor[0].target!=motor[0].step)//当距离<125开始减速很慢，然后停下
-            going_wait=1;
-        while(going_wait)
-        {
-            if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<125)
+            else if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<125)
             {   delay_ms(2);
-
                 if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<125)
                 {
                     for(GO_CONT = 225; GO_CONT>0; GO_CONT--)//每隔200us重复设定速度值，越大越慢
@@ -636,7 +628,7 @@ void GO(int ib)
     case 3://循环时的左移
 //        F_flag=SortAndCal(1,5);
 //        B_flag=SortAndCal(4,5);
-        speed_up_CNT_ms(2,220,3,16000);//320  35  240 45
+        speed_up_CNT_ms(2,210,3,16000);//320  35  240 45
         if(motor[0].target!=motor[0].step)
             going_wait=1;
         while(1)
@@ -730,10 +722,12 @@ void GO(int ib)
                     motor[1].step=motor[1].target=0;
                     motor[2].step=motor[2].target=0;
                     motor[3].step=motor[3].target=0;
+//                    run(3,900,45);
+//                    step_wait();
                     break;
                 }
             }
-            if(R_front==0)
+            else if(R_front==0)
             {   delay_ms(10);
                 if(R_front==0)
                 {
@@ -742,22 +736,19 @@ void GO(int ib)
                     motor[2].step=motor[2].target=0;
                     motor[3].step=motor[3].target=0;
                     speed_down_CNT_ms(3,240,1,50000);
-                    GO(5);
+                    GO(5);going_wait=0;
                 }
             }
-            if(L<30||R<30)
+           else if(L<25||R<25)
             {
                 motor[0].step=motor[0].target=0;
                 motor[1].step=motor[1].target=0;
                 motor[2].step=motor[2].target=0;
                 motor[3].step=motor[3].target=0;
                 speed_down_CNT_ms(3,240,3,50000);
-                GO(5);
+                GO(5);going_wait=0;
             }
         }
-        run(3,900,45);
-        step_wait();
-
     }
 }
 

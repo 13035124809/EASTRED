@@ -12,6 +12,8 @@ void self_control(void)
 {int out=1;
     while(out)
     {   int ix;
+        int iq;
+        int is=0;
         float LEFT,RIGHT;
         s32 B_step;
         //上方四个红外全亮
@@ -66,15 +68,27 @@ void self_control(void)
             break;
         case 1:
             speed_up_CNT_us(4,200,1,20);//正旋
+            if(iq==2||iq==3) is++;
+            if(is==5) out=0;
+            iq=1;
             break;
         case 2:
             speed_up_CNT_us(5,200,1,20);//逆旋
+            if(iq==1||iq==4) is++;
+            if(is==5) out=0;
+            iq=2;
             break;
         case 3:
             speed_up_CNT_us(5,200,1,20);//逆旋
+            if(iq==1||iq==4) is++;
+            if(is==5) out=0;
+            iq=3;
             break;
         case 4:
             speed_up_CNT_us(4,200,1,20);//正旋
+            if(iq==2||iq==3) is++;
+            if(is==5) out=0;
+            iq=4;
             break;
         case 5:LEFT=SortAndCal(2,5);
             if(LEFT>=110&&LEFT<=250)
