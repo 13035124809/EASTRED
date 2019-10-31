@@ -14,68 +14,68 @@
 //extern float BackRight_dist;
 int value[]=
 {
-385,385,385,385,385,385,385,385,385,385,//10
-385,385,385,385,385,385,385,385,385,385,//20
-385,385,385,385,385,385,385,385,385,385,//30
-385,385,385,385,385,385,385,385,385,385,//40
-385,385,385,385,385,385,385,385,385,385,//50
-385,385,385,385,385,385,385,385,385,385,//60
-385,385,385,385,385,385,385,385,385,385,//70
-385,385,385,385,385,385,385,385,385,385,//80
-385,385,385,385,385,385,385,385,385,385,//90
-385,385,385,385,385,385,385,385,385,385,//100
-385,385,385,385,385,385,385,385,385,385,//110
-385,385,385,385,385,385,385,385,385,385,//120
-370,370,370,370,370,370,370,370,370,357,//130
-357,357,357,357,357,357,357,345,345,345,//140
-345,345,345,345,345,333,333,333,333,333,//150
-333,323,323,323,323,323,323,312,312,312,//160
-312,312,312,303,303,303,303,303,294,294,//170
-294,294,294,286,286,286,286,278,278,278,//180
-278,270,270,270,270,263,263,263,263,256,//190
-256,256,256,250,250,250,244,244,244,238,//200
-238,238,233,233,233,227,227,227,222,222,//210
-222,217,217,217,213,213,208,208,208,204,//220
-204,200,200,200,196,196,192,192,189,189,//230
-185,185,182,182,179,179,175,175,172,172,//240
-169,169,167,167,164,164,161,161,159,156,//250
-156,154,154,152,149,149,147,145,145,143,//260
-141,141,139,137,137,135,133,133,132,130,//270
-128,128,127,125,123,123,122,120,119,119,//280
-118,116,115,114,112,112,111,110,109,108,//290
-106,105,104,104,103,102,101,100,99,98,//300
-97,96,95,94,93,93,92,91,90,89,//310
-88,88,87,86,85,85,84,83,83,82,//320
-81,80,79,79,78,78,77,76,76,75,//330
-74,74,73,72,72,71,70,70,69,69,//340
-68,68,67,67,66,66,65,65,64,64,//350
-63,63,62,62,61,61,61,60,60,59,//360
-59,58,58,57,57,57,56,56,56,55,//370
-55,54,54,54,53,53,53,52,52,52,//380
-51,51,51,51,50,50,50,49,49,49,//390
-48,48,48,48,47,47,47,47,46,46,//400
-46,45,45,45,45,45,44,44,44,44,//410
-43,43,43,43,43,43,42,42,42,42,//420
-42,41,41,41,41,41,41,40,40,40,//430
-40,40,40,40,39,39,39,39,39,39,//440
-39,38,38,38,38,38,38,38,38,37,//450
-37,37,37,37,37,37,37,37,36,36,//460
-36,36,36,36,36,36,36,36,36,35,//470
-35,35,35,35,35,35,35,35,35,35,//480
-35,35,34,34,34,34,34,34,34,34,//490
-34,34,34,34,34,34,34,34,34,33,//500
-33,33,33,33,33,33,33,33,33,33,//510
-33,33,33,33,33,33,33,33,33,33,//520
-32,32,32,32,32,32,32,32,32,32,//530
-32,32,32,32,32,32,32,32,32,32,//540
-32,32,32,32,32,32,32,32,32,32,//550
-32,32,32,32,31,31,31,31,31,31,//560
-31,31,31,31,31,31,31,31,31,31,//570
-31,31,31,31,31,31,31,31,31,31,//580
-31,31,31,31,31,31,31,31,31,31,//590
-31,31,31,31,31,31,31,31,31,31,//600
-31,31,31,31,31,31,31,31,31,31,//610
-31,31,31,31,31,31,31,31,31,31,//620
+    385,385,385,385,385,385,385,385,385,385,//10
+    385,385,385,385,385,385,385,385,385,385,//20
+    385,385,385,385,385,385,385,385,385,385,//30
+    385,385,385,385,385,385,385,385,385,385,//40
+    385,385,385,385,385,385,385,385,385,385,//50
+    385,385,385,385,385,385,385,385,385,385,//60
+    385,385,385,385,385,385,385,385,385,385,//70
+    385,385,385,385,385,385,385,385,385,385,//80
+    385,385,385,385,385,385,385,385,385,385,//90
+    385,385,385,385,385,385,385,385,385,385,//100
+    385,385,385,385,385,385,385,385,385,385,//110
+    385,385,385,385,385,385,385,385,385,385,//120
+    370,370,370,370,370,370,370,370,370,357,//130
+    357,357,357,357,357,357,357,345,345,345,//140
+    345,345,345,345,345,333,333,333,333,333,//150
+    333,323,323,323,323,323,323,312,312,312,//160
+    312,312,312,303,303,303,303,303,294,294,//170
+    294,294,294,286,286,286,286,278,278,278,//180
+    278,270,270,270,270,263,263,263,263,256,//190
+    256,256,256,250,250,250,244,244,244,238,//200
+    238,238,233,233,233,227,227,227,222,222,//210
+    222,217,217,217,213,213,208,208,208,204,//220
+    204,200,200,200,196,196,192,192,189,189,//230
+    185,185,182,182,179,179,175,175,172,172,//240
+    169,169,167,167,164,164,161,161,159,156,//250
+    156,154,154,152,149,149,147,145,145,143,//260
+    141,141,139,137,137,135,133,133,132,130,//270
+    128,128,127,125,123,123,122,120,119,119,//280
+    118,116,115,114,112,112,111,110,109,108,//290
+    106,105,104,104,103,102,101,100,99,98,//300
+    97,96,95,94,93,93,92,91,90,89,//310
+    88,88,87,86,85,85,84,83,83,82,//320
+    81,80,79,79,78,78,77,76,76,75,//330
+    74,74,73,72,72,71,70,70,69,69,//340
+    68,68,67,67,66,66,65,65,64,64,//350
+    63,63,62,62,61,61,61,60,60,59,//360
+    59,58,58,57,57,57,56,56,56,55,//370
+    55,54,54,54,53,53,53,52,52,52,//380
+    51,51,51,51,50,50,50,49,49,49,//390
+    48,48,48,48,47,47,47,47,46,46,//400
+    46,45,45,45,45,45,44,44,44,44,//410
+    43,43,43,43,43,43,42,42,42,42,//420
+    42,41,41,41,41,41,41,40,40,40,//430
+    40,40,40,40,39,39,39,39,39,39,//440
+    39,38,38,38,38,38,38,38,38,37,//450
+    37,37,37,37,37,37,37,37,36,36,//460
+    36,36,36,36,36,36,36,36,36,35,//470
+    35,35,35,35,35,35,35,35,35,35,//480
+    35,35,34,34,34,34,34,34,34,34,//490
+    34,34,34,34,34,34,34,34,34,33,//500
+    33,33,33,33,33,33,33,33,33,33,//510
+    33,33,33,33,33,33,33,33,33,33,//520
+    32,32,32,32,32,32,32,32,32,32,//530
+    32,32,32,32,32,32,32,32,32,32,//540
+    32,32,32,32,32,32,32,32,32,32,//550
+    32,32,32,32,31,31,31,31,31,31,//560
+    31,31,31,31,31,31,31,31,31,31,//570
+    31,31,31,31,31,31,31,31,31,31,//580
+    31,31,31,31,31,31,31,31,31,31,//590
+    31,31,31,31,31,31,31,31,31,31,//600
+    31,31,31,31,31,31,31,31,31,31,//610
+    31,31,31,31,31,31,31,31,31,31,//620
 };
 int value1[]=
 {   3571,3571,3571,3571,3571,3571,3571,3571,3125,3125,//10
@@ -544,34 +544,37 @@ void GO(int ib)
     case 0:
         while(1)
         {
-        if(SortAndCal(0,5)<900||SortAndCal(4,5)<900)//判断起步模块
-        {
-           speed_up_CNT_ms(0,340,2,50000);
-           IFx=1;break; 
-        }else if(SortAndCal(0,5)>=900||SortAndCal(4,5)>=900)
-              {
-               speed_up_CNT_ms(0,509,2,50000);//后退起步
-               IFx=0;break;
-              }
-         }
-            if(motor[0].target!=motor[0].step)//当距离<600的时候开始减速到60
+            if(SortAndCal(0,5)<900||SortAndCal(4,5)<900)//判断起步模块
+            {   PBout(8)=1;
+                speed_up_CNT_ms(0,340,2,50000);
+                IFx=1;
+                break;
+            } else if(SortAndCal(0,5)>=900||SortAndCal(4,5)>=900)
+            {
+                speed_up_CNT_ms(0,509,2,50000);//后退起步
+                IFx=0;
+                break;
+            }PBout(8)=0;
+        }
+        if(motor[0].target!=motor[0].step)//当距离<600的时候开始减速到60
             going_wait=1;
         while(going_wait)
         {
-         if((R_above==0||L_above==0)&&SortAndCal(0,5)>900)
+            if((R_above==0||L_above==0)&&SortAndCal(0,5)>900)
             {
                 if(SortAndCal(2,5)<40||SortAndCal(3,5)<40)
                 {
                     speed_down_CNT_ms(0,340,3,50000);
                     self_control();
-                    GO(0);going_wait=0;
+                    GO(0);
+                    going_wait=0;
                 }
             }
-         else if(SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)//快速起步时的减速模块
+            else if(going_wait&&SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)//快速起步时的减速模块
             {
                 delay_ms(2);
-                if(SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)
-                {
+                if(going_wait&&SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)
+                {   PBout(8)=1;
                     for(GO_CONT = 509; GO_CONT>340; GO_CONT--)//每隔200us重复设定速度值，越大越慢
                     {
                         DOWN_speed=value[GO_CONT];
@@ -581,16 +584,16 @@ void GO(int ib)
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
                     }
-                    IFx=2;
+                    IFx=2; PBout(8)=0;
                 }
             }
-         else if((SortAndCal(0,5)<80||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
+            else if(going_wait&&(SortAndCal(0,5)<80||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
             {   delay_ms(2);
-                if((SortAndCal(0,5)<80||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
+                if(going_wait&&(SortAndCal(0,5)<80||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
                 {
                     for(GO_CONT = 340; GO_CONT>0; GO_CONT--)//每隔200us重复设定速度值，越大越慢
                     {
-                        
+
                         DOWN_speed=value[GO_CONT];
                         delay_us(50);
                         if(GO_CONT==1) DOWN_speed=3000;
@@ -598,7 +601,8 @@ void GO(int ib)
                         SetpMotor_SetSpeed(1,DOWN_speed);
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
-                    }speed_up_CNT_us(1,358,10,50000);
+                    }
+                    speed_up_CNT_us(1,358,10,50000);
                     going_wait=0;
                     motor[0].step=motor[0].target=0;
                     motor[1].step=motor[1].target=0;
@@ -611,35 +615,38 @@ void GO(int ib)
     case 1:
         while(1)
         {
-        if(SortAndCal(1,5)<900&&(SortAndCal(0,5)>800||SortAndCal(4,5)>800))
-        {
-            speed_up_CNT_ms(1,340,2,50000);
-            IFx=1;break;
-        }else if(SortAndCal(1,5)>=900) 
-        {
-            speed_up_CNT_ms(1,509,2,50000);
-            IFx=0;break;
-        }
+            if(SortAndCal(1,5)<900&&(SortAndCal(0,5)>800||SortAndCal(4,5)>800))
+            {   PBout(8)=1;
+                speed_up_CNT_ms(1,340,2,50000);
+                IFx=1;
+                break;
+            } else if(SortAndCal(1,5)>=900)
+            {
+                speed_up_CNT_ms(1,509,2,50000);
+                IFx=0;
+                break;
+            } PBout(8)=0;
         }
         if(motor[0].target!=motor[0].step)//当距离<600的时候开始减速到60
             going_wait=1;
-while(going_wait)
-        {      printf("qian%f\r\n",SortAndCal(1,5)); 
+        while(going_wait)
+        {   //printf("qian%f\r\n",SortAndCal(1,5));
             if((R_above==0||L_above==0)&&SortAndCal(1,5)>900)
             {
                 if(SortAndCal(2,5)<40||SortAndCal(3,5)<40)
                 {
                     speed_down_CNT_ms(1,340,3,50000);
                     self_control();
-                    GO(1);going_wait=0;
+                    GO(1);
+                    going_wait=0;
                 }
             }
-           else if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
+            else if(going_wait&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
             {   delay_ms(2);
-                if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
+                if(going_wait&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
                 {
                     for(GO_CONT = 509; GO_CONT>340; GO_CONT--)//每隔200us重复设定速度值，越大越慢
-                    {
+                    { PBout(8)=1;
                         DOWN_speed=value[GO_CONT];
                         delay_ms(2);
                         SetpMotor_SetSpeed(0,DOWN_speed);
@@ -647,12 +654,12 @@ while(going_wait)
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
                     }
-                    IFx=2;
+                    IFx=2; PBout(8)=0;
                 }
             }
-            else if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<125)
+            else if(going_wait&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<125)
             {   delay_ms(2);
-                if(SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<125)
+                if(going_wait&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<125)
                 {
                     for(GO_CONT = 340; GO_CONT>0; GO_CONT--)//每隔200us重复设定速度值，越大越慢
                     {
@@ -663,7 +670,8 @@ while(going_wait)
                         SetpMotor_SetSpeed(1,DOWN_speed);
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
-                    }speed_up_CNT_us(0,358,10,50000);
+                    }
+                    speed_up_CNT_us(0,358,10,50000);
                     going_wait=0;
                     motor[0].step=motor[0].target=0;
                     motor[1].step=motor[1].target=0;
@@ -694,107 +702,82 @@ while(going_wait)
                 }
             }
         }
-        run(2,1100,31);
+        run(2,1200,31);
         step_wait();
         speed_down(2,50000);//(int ia,int CNT,u32 nus,s32 step)
         break;
     case 3://循环时的左移
 //        F_flag=SortAndCal(1,5);
 //        B_flag=SortAndCal(4,5);
-        lCount=0;
         SetpMotor_SetStep(0,-26000);	//左移
         SetpMotor_SetStep(1,26000);
         SetpMotor_SetStep(2,-26000);
         SetpMotor_SetStep(3,26000);
         if(motor[0].target!=motor[0].step)
-            going_wait=1;
-        while(1)
-        {
-            if(lCount<619)
+        going_wait=1;lCount = 0;
+        while(going_wait)
+        {   
+            if(lCount>=619) going_wait=0;
+            else if(L_front&&!L_rear)
             {
             SetpMotor_SetSpeed(0,value[lCount]);
             SetpMotor_SetSpeed(1,value[lCount]);
             SetpMotor_SetSpeed(2,value[lCount]);
             SetpMotor_SetSpeed(3,value[lCount]);
-            lCount++;
             delay_ms(4);
-            if(L_front&&!L_rear)
+            lCount++;  
+            if(L_front==0)
+            {delay_ms(5);
+                if(L_front==0)
             {
-                while(going_wait)
-                {
-                    if(L_front==0)
-                    {   delay_ms(5);
-                        if(L_front==0)
-                        {
-                            motor[0].step=motor[0].target=0;
-                            motor[1].step=motor[1].target=0;
-                            motor[2].step=motor[2].target=0;
-                            motor[3].step=motor[3].target=0;
-                            going_wait=0;
-                        }
-                    }
-                }
-                break;
+                while(L_front==0)
+                {   PBout(8)=1;
+                    SetpMotor_SetSpeed(0,value[lCount]);
+                    SetpMotor_SetSpeed(1,value[lCount]);
+                    SetpMotor_SetSpeed(2,value[lCount]);
+                    SetpMotor_SetSpeed(3,value[lCount]);
+                    delay_ms(4);
+                    if(lCount<=619)lCount++;  
+                }PBout(8)=0;
+             motor[0].step=motor[0].target=0;
+             motor[1].step=motor[1].target=0;
+             motor[2].step=motor[2].target=0;
+             motor[3].step=motor[3].target=0;
+             going_wait=0;   
+            } 
+            }            
             }
-            if(!L_front&&L_rear)
+            else if(!L_front&&L_rear)
             {
-                while(going_wait)
-                {
-                    if(L_rear==0)
-                    {   delay_ms(5);
-                        if(L_rear==0)
-                        {
-                            motor[0].step=motor[0].target=0;
-                            motor[1].step=motor[1].target=0;
-                            motor[2].step=motor[2].target=0;
-                            motor[3].step=motor[3].target=0;
-                            going_wait=0;
-                        }
-                    }
-                }
-                break;
-            }                
-            }else 
+            SetpMotor_SetSpeed(0,value[lCount]);
+            SetpMotor_SetSpeed(1,value[lCount]);
+            SetpMotor_SetSpeed(2,value[lCount]);
+            SetpMotor_SetSpeed(3,value[lCount]);
+            delay_ms(4);
+            lCount++;  
+            if(L_rear==0)
+            {delay_ms(5);
+                if(L_rear==0)
             {
-              if(L_front&&!L_rear)
-            {
-                while(going_wait)
-                {
-                    if(L_front==0)
-                    {   delay_ms(5);
-                        if(L_front==0)
-                        {
-                            motor[0].step=motor[0].target=0;
-                            motor[1].step=motor[1].target=0;
-                            motor[2].step=motor[2].target=0;
-                            motor[3].step=motor[3].target=0;
-                            going_wait=0;
-                        }
-                    }
-                }
-                break;
+                while(L_rear==0)
+                {   PBout(8)=1;
+                    SetpMotor_SetSpeed(0,value[lCount]);
+                    SetpMotor_SetSpeed(1,value[lCount]);
+                    SetpMotor_SetSpeed(2,value[lCount]);
+                    SetpMotor_SetSpeed(3,value[lCount]);
+                    delay_ms(4);
+                    if(lCount<=619)lCount++; 
+                }PBout(8)=0;
+             motor[0].step=motor[0].target=0;
+             motor[1].step=motor[1].target=0;
+             motor[2].step=motor[2].target=0;
+             motor[3].step=motor[3].target=0;
+             going_wait=0;   
+            } 
+            }   
             }
-            if(!L_front&&L_rear)
-            {
-                while(going_wait)
-                {
-                    if(L_rear==0)
-                    {   delay_ms(5);
-                        if(L_rear==0)
-                        {
-                            motor[0].step=motor[0].target=0;
-                            motor[1].step=motor[1].target=0;
-                            motor[2].step=motor[2].target=0;
-                            motor[3].step=motor[3].target=0;
-                            going_wait=0;
-                        }
-                    }
-                }
-                break;
-            }
-            }
-        }
-        run(2,1253,value[lCount]);
+        }    
+        run(2,553,value[lCount]);
         step_wait();
         speed_down_CNT_us(2,lCount,20,50000);//(int ia,int CNT,u32 nus,s32 step)
         break;
@@ -807,8 +790,8 @@ while(going_wait)
                 break;
             else if(L_rear==1)break;
             else if(R>400)break;
-            else if((L-R)>=10)speed_up_CNT_us(5,200,10,(L-R)*1.1);//逆旋
-            else if((L-R)<=-10)speed_up_CNT_us(4,200,10,(R-L)*1.1);//正旋
+            else if((L-R)>=10)speed_up_CNT_us(5,303,1,(L-R)*1.1);//逆旋
+            else if((L-R)<=-10)speed_up_CNT_us(4,303,1,(R-L)*1.1);//正旋
         }
         while(1)//对中
         {
@@ -818,9 +801,9 @@ while(going_wait)
             else if(L_rear==1)break;
             else if(R>400)break;
             else if(R<45&&R>30)
-                speed_up_CNT_us(1,200,10,(R-30)*5);//前进
+                speed_up_CNT_us(1,303,1,(R-30)*5);//前进
             else if(R>70)
-                speed_up_CNT_us(0,200,10,(R-70)*5);//后退
+                speed_up_CNT_us(0,303,1,(R-70)*5);//后退
         }
         break;
     case 5: //右移
@@ -856,17 +839,19 @@ while(going_wait)
                     motor[2].step=motor[2].target=0;
                     motor[3].step=motor[3].target=0;
                     speed_down_CNT_ms(3,240,1,50000);
-                    GO(5);going_wait=0;
+                    GO(5);
+                    going_wait=0;
                 }
             }
-           else if(L<25||R<25)
+            else if(going_wait&&(L<25||R<25))
             {
                 motor[0].step=motor[0].target=0;
                 motor[1].step=motor[1].target=0;
                 motor[2].step=motor[2].target=0;
                 motor[3].step=motor[3].target=0;
                 speed_down_CNT_ms(3,240,3,50000);
-                GO(5);going_wait=0;
+                GO(5);
+                going_wait=0;
             }
         }
     }

@@ -536,6 +536,7 @@ void GO(int ib)
 {   int going_wait=0;
     int GO_CONT,lCount;
     int IFx;
+    int NO_repead=1;
     s32 DOWN_speed;
 //    float F_flag,B_flag;
     float L,R;
@@ -545,35 +546,38 @@ void GO(int ib)
         while(1)
         {
             if(SortAndCal(0,5)<900||SortAndCal(4,5)<900)//判断起步模块
-            {   PBout(8)=1;
+            {   
+                PBout(8)=1;
                 speed_up_CNT_ms(0,340,2,50000);
-                IFx=1;
+                IFx=0;
                 break;
-            } else if(SortAndCal(0,5)>=900||SortAndCal(4,5)>=900)
+            }
+            else if(SortAndCal(0,5)>=900||SortAndCal(4,5)>=900)
             {
                 speed_up_CNT_ms(0,509,2,50000);//后退起步
                 IFx=0;
                 break;
-            }PBout(8)=0;
+            }
+            PBout(8)=0;
         }
         if(motor[0].target!=motor[0].step)//当距离<600的时候开始减速到60
             going_wait=1;
         while(going_wait)
         {
-            if((R_above==0||L_above==0)&&SortAndCal(0,5)>900)
+            if((R_above==0||L_above==0)&&SortAndCal(0,5)>900&&(!L_below_C||!R_below_C))
             {
                 if(SortAndCal(2,5)<40||SortAndCal(3,5)<40)
                 {
                     speed_down_CNT_ms(0,340,3,50000);
                     self_control();
                     GO(0);
-                    going_wait=0;
+                    going_wait=0;NO_repead=0;
                 }
             }
-            else if(going_wait&&SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)//快速起步时的减速模块
+           else if(NO_repead&&SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)//快速起步时的减速模块
             {
                 delay_ms(2);
-                if(going_wait&&SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)
+                if(NO_repead&&SortAndCal(0,5)<600&&SortAndCal(4,5)<600&&SortAndCal(1,5)>800&&IFx==0)
                 {   PBout(8)=1;
                     for(GO_CONT = 509; GO_CONT>340; GO_CONT--)//每隔200us重复设定速度值，越大越慢
                     {
@@ -584,25 +588,29 @@ void GO(int ib)
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
                     }
-                    IFx=2; PBout(8)=0;
+                    IFx=2;
+                    PBout(8)=0;
                 }
             }
-            else if(going_wait&&(SortAndCal(0,5)<80||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
+           else if(NO_repead&&(SortAndCal(0,5)<120||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
             {   delay_ms(2);
-                if(going_wait&&(SortAndCal(0,5)<80||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
+                if(NO_repead&&(SortAndCal(0,5)<120||SortAndCal(4,5)<80)&&SortAndCal(1,5)>800)
                 {
                     for(GO_CONT = 340; GO_CONT>0; GO_CONT--)//每隔200us重复设定速度值，越大越慢
                     {
 
                         DOWN_speed=value[GO_CONT];
-                        delay_us(50);
-                        if(GO_CONT==1) DOWN_speed=3000;
+                        delay_us(100);
                         SetpMotor_SetSpeed(0,DOWN_speed);
                         SetpMotor_SetSpeed(1,DOWN_speed);
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
+                        if(GO_CONT==1) 
+                        {
+                        speed_down_CNT_ms(1,75,2,1000);
+                        }
                     }
-                    speed_up_CNT_us(1,358,10,50000);
+                    speed_up_CNT_us(1,358,30,500);
                     going_wait=0;
                     motor[0].step=motor[0].target=0;
                     motor[1].step=motor[1].target=0;
@@ -618,35 +626,36 @@ void GO(int ib)
             if(SortAndCal(1,5)<900&&(SortAndCal(0,5)>800||SortAndCal(4,5)>800))
             {   PBout(8)=1;
                 speed_up_CNT_ms(1,340,2,50000);
-                IFx=1;
+                IFx=0;
                 break;
-            } else if(SortAndCal(1,5)>=900)
+            }else if(SortAndCal(1,5)>=900)
             {
                 speed_up_CNT_ms(1,509,2,50000);
                 IFx=0;
                 break;
-            } PBout(8)=0;
+            }
+            PBout(8)=0;
         }
         if(motor[0].target!=motor[0].step)//当距离<600的时候开始减速到60
             going_wait=1;
         while(going_wait)
         {   //printf("qian%f\r\n",SortAndCal(1,5));
-            if((R_above==0||L_above==0)&&SortAndCal(1,5)>900)
+            if((R_above==0||L_above==0)&&SortAndCal(1,5)>900&&(!L_above_C||!R_above_C))
             {
                 if(SortAndCal(2,5)<40||SortAndCal(3,5)<40)
                 {
                     speed_down_CNT_ms(1,340,3,50000);
                     self_control();
                     GO(1);
-                    going_wait=0;
+                    going_wait=0;NO_repead=0;
                 }
             }
-            else if(going_wait&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
+           else if(NO_repead&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
             {   delay_ms(2);
-                if(going_wait&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
+                if(NO_repead&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<600&&IFx==0)
                 {
                     for(GO_CONT = 509; GO_CONT>340; GO_CONT--)//每隔200us重复设定速度值，越大越慢
-                    { PBout(8)=1;
+                    {   PBout(8)=1;
                         DOWN_speed=value[GO_CONT];
                         delay_ms(2);
                         SetpMotor_SetSpeed(0,DOWN_speed);
@@ -654,24 +663,28 @@ void GO(int ib)
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
                     }
-                    IFx=2; PBout(8)=0;
+                    IFx=2;
+                    PBout(8)=0;
                 }
             }
-            else if(going_wait&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<125)
+            else if(NO_repead&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<155)
             {   delay_ms(2);
-                if(going_wait&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<125)
+                if(NO_repead&&SortAndCal(0,5)>800&&SortAndCal(4,5)>800&&SortAndCal(1,5)<155)
                 {
                     for(GO_CONT = 340; GO_CONT>0; GO_CONT--)//每隔200us重复设定速度值，越大越慢
                     {
                         DOWN_speed=value[GO_CONT];
-                        delay_us(2);
-                        if(GO_CONT==1) DOWN_speed=3000;
+                        delay_us(100);
                         SetpMotor_SetSpeed(0,DOWN_speed);
                         SetpMotor_SetSpeed(1,DOWN_speed);
                         SetpMotor_SetSpeed(2,DOWN_speed);
                         SetpMotor_SetSpeed(3,DOWN_speed);
+                        if(GO_CONT==1) 
+                        {
+                            speed_down_CNT_ms(1,75,2,1000);
+                        }
                     }
-                    speed_up_CNT_us(0,358,10,50000);
+                    speed_up_CNT_us(0,358,30,500);
                     going_wait=0;
                     motor[0].step=motor[0].target=0;
                     motor[1].step=motor[1].target=0;
@@ -714,69 +727,72 @@ void GO(int ib)
         SetpMotor_SetStep(2,-26000);
         SetpMotor_SetStep(3,26000);
         if(motor[0].target!=motor[0].step)
-        going_wait=1;lCount = 0;
+            going_wait=1;
+        lCount = 0;
         while(going_wait)
-        {   
+        {
             if(lCount>=619) going_wait=0;
             else if(L_front&&!L_rear)
             {
-            SetpMotor_SetSpeed(0,value[lCount]);
-            SetpMotor_SetSpeed(1,value[lCount]);
-            SetpMotor_SetSpeed(2,value[lCount]);
-            SetpMotor_SetSpeed(3,value[lCount]);
-            delay_ms(4);
-            lCount++;  
-            if(L_front==0)
-            {delay_ms(5);
+                SetpMotor_SetSpeed(0,value[lCount]);
+                SetpMotor_SetSpeed(1,value[lCount]);
+                SetpMotor_SetSpeed(2,value[lCount]);
+                SetpMotor_SetSpeed(3,value[lCount]);
+                delay_ms(4);
+                lCount++;
                 if(L_front==0)
-            {
-                while(L_front==0)
-                {   PBout(8)=1;
-                    SetpMotor_SetSpeed(0,value[lCount]);
-                    SetpMotor_SetSpeed(1,value[lCount]);
-                    SetpMotor_SetSpeed(2,value[lCount]);
-                    SetpMotor_SetSpeed(3,value[lCount]);
-                    delay_ms(4);
-                    if(lCount<=619)lCount++;  
-                }PBout(8)=0;
-             motor[0].step=motor[0].target=0;
-             motor[1].step=motor[1].target=0;
-             motor[2].step=motor[2].target=0;
-             motor[3].step=motor[3].target=0;
-             going_wait=0;   
-            } 
-            }            
+                {   delay_ms(5);
+                    if(L_front==0)
+                    {
+                        while(L_front==0)
+                        {   PBout(8)=1;
+                            SetpMotor_SetSpeed(0,value[lCount]);
+                            SetpMotor_SetSpeed(1,value[lCount]);
+                            SetpMotor_SetSpeed(2,value[lCount]);
+                            SetpMotor_SetSpeed(3,value[lCount]);
+                            delay_ms(4);
+                            if(lCount<=619)lCount++;
+                        }
+                        PBout(8)=0;
+                        motor[0].step=motor[0].target=0;
+                        motor[1].step=motor[1].target=0;
+                        motor[2].step=motor[2].target=0;
+                        motor[3].step=motor[3].target=0;
+                        going_wait=0;
+                    }
+                }
             }
             else if(!L_front&&L_rear)
             {
-            SetpMotor_SetSpeed(0,value[lCount]);
-            SetpMotor_SetSpeed(1,value[lCount]);
-            SetpMotor_SetSpeed(2,value[lCount]);
-            SetpMotor_SetSpeed(3,value[lCount]);
-            delay_ms(4);
-            lCount++;  
-            if(L_rear==0)
-            {delay_ms(5);
+                SetpMotor_SetSpeed(0,value[lCount]);
+                SetpMotor_SetSpeed(1,value[lCount]);
+                SetpMotor_SetSpeed(2,value[lCount]);
+                SetpMotor_SetSpeed(3,value[lCount]);
+                delay_ms(4);
+                lCount++;
                 if(L_rear==0)
-            {
-                while(L_rear==0)
-                {   PBout(8)=1;
-                    SetpMotor_SetSpeed(0,value[lCount]);
-                    SetpMotor_SetSpeed(1,value[lCount]);
-                    SetpMotor_SetSpeed(2,value[lCount]);
-                    SetpMotor_SetSpeed(3,value[lCount]);
-                    delay_ms(4);
-                    if(lCount<=619)lCount++; 
-                }PBout(8)=0;
-             motor[0].step=motor[0].target=0;
-             motor[1].step=motor[1].target=0;
-             motor[2].step=motor[2].target=0;
-             motor[3].step=motor[3].target=0;
-             going_wait=0;   
-            } 
-            }   
+                {   delay_ms(5);
+                    if(L_rear==0)
+                    {
+                        while(L_rear==0)
+                        {   PBout(8)=1;
+                            SetpMotor_SetSpeed(0,value[lCount]);
+                            SetpMotor_SetSpeed(1,value[lCount]);
+                            SetpMotor_SetSpeed(2,value[lCount]);
+                            SetpMotor_SetSpeed(3,value[lCount]);
+                            delay_ms(4);
+                            if(lCount<=619)lCount++;
+                        }
+                        PBout(8)=0;
+                        motor[0].step=motor[0].target=0;
+                        motor[1].step=motor[1].target=0;
+                        motor[2].step=motor[2].target=0;
+                        motor[3].step=motor[3].target=0;
+                        going_wait=0;
+                    }
+                }
             }
-        }    
+        }
         run(2,553,value[lCount]);
         step_wait();
         speed_down_CNT_us(2,lCount,20,50000);//(int ia,int CNT,u32 nus,s32 step)

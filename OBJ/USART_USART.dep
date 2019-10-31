@@ -130,7 +130,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5D941034)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x5D941034)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x5D941034)
 I (D:\MDK5.14\ARM\ARMCC\include\stdio.h)(0x5D43AF9A)
-F (..\HARDWARE\STEP\step.c)(0x5DBABEF0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\TIMER -I..\STM32F10x_FWLib\src -I..\HARDWARE\STEP -I..\HARDWARE\WAVE -I..\HARDWARE\INFRARED_INIT -I..\HARDWARE\SELF_CONTROL-I "C:\Users\water and YJ\Desktop\国庆一号\EASTRED\USER\RTE"-I D:\MDK5.14\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5.14\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\step.o --omf_browse ..\obj\step.crf --depend ..\obj\step.d)
+F (..\HARDWARE\STEP\step.c)(0x5DBAD8B7)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\TIMER -I..\STM32F10x_FWLib\src -I..\HARDWARE\STEP -I..\HARDWARE\WAVE -I..\HARDWARE\INFRARED_INIT -I..\HARDWARE\SELF_CONTROL-I "C:\Users\water and YJ\Desktop\国庆一号\EASTRED\USER\RTE"-I D:\MDK5.14\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5.14\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\step.o --omf_browse ..\obj\step.crf --depend ..\obj\step.d)
 I (..\HARDWARE\STEP\step.h)(0x5D99747A)
 I (..\SYSTEM\sys\sys.h)(0x5D941034)
 I (..\USER\stm32f10x.h)(0x5D941034)
