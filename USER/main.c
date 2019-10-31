@@ -35,7 +35,7 @@ int main(void)
     TIM2_Int_Init(12,10);    //TIM2初始化
     TIM6_Int_Init(999,71);   //TIM6初始化
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
-    //WIFI_INIT();//wifi模块初始化   
+    //WIFI_INIT();//wifi模块初始化     
     GO(2);
     GO(1);
     GO(0);

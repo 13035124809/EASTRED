@@ -67,57 +67,57 @@ void self_control(void)
             out=0;
             break;
         case 1:
-            speed_up_CNT_us(4,200,1,20);//ÕýÐý
+            speed_up_CNT_us(4,303,1,20);//ÕýÐý
             if(iq==2||iq==3) is++;
             if(is==5) out=0;
             iq=1;
             break;
         case 2:
-            speed_up_CNT_us(5,200,1,20);//ÄæÐý
+            speed_up_CNT_us(5,303,1,20);//ÄæÐý
             if(iq==1||iq==4) is++;
             if(is==5) out=0;
             iq=2;
             break;
         case 3:
-            speed_up_CNT_us(5,200,1,20);//ÄæÐý
+            speed_up_CNT_us(5,303,1,20);//ÄæÐý
             if(iq==1||iq==4) is++;
             if(is==5) out=0;
             iq=3;
             break;
         case 4:
-            speed_up_CNT_us(4,200,1,20);//ÕýÐý
+            speed_up_CNT_us(4,303,1,20);//ÕýÐý
             if(iq==2||iq==3) is++;
             if(is==5) out=0;
             iq=4;
             break;
         case 5:LEFT=SortAndCal(2,5);
-            if(LEFT>=110&&LEFT<=250)
+            if(LEFT>=95&&LEFT<=250)
             {
-                B_step=(LEFT-115)*5.6;
+                B_step=(LEFT-95)*5.6;
             }
             else {
                 B_step=80;
             }
-            speed_up_CNT_us(3,200,2,B_step);//ÓÒÒÆ
+            speed_up_CNT_us(3,303,2,B_step);//ÓÒÒÆ
             step_wait();
             break;
         case 6:RIGHT=SortAndCal(3,5);
-            if(RIGHT>=110&&RIGHT<=250)
+            if(RIGHT>=95&&RIGHT<=250)
             {
-                B_step=(RIGHT-115)*5.6;
+                B_step=(RIGHT-95)*5.6;
             }
             else {
                 B_step=80;
                 
             }
-            speed_up_CNT_us(2,200,2,B_step);//×óÒÆ
+            speed_up_CNT_us(2,303,2,B_step);//×óÒÆ
             step_wait();
             break;
          case 7:
-            speed_up_CNT_us(4,200,1,160);//ÕýÐý
+            speed_up_CNT_us(4,303,1,160);//ÕýÐý
             break;
          case 8:
-            speed_up_CNT_us(5,200,1,160);//ÄæÐý
+            speed_up_CNT_us(5,303,1,160);//ÄæÐý
             break;
        default : 
             out=0;
